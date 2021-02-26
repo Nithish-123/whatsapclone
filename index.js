@@ -29,7 +29,7 @@ const corsOpts = {
 app.use(express.json());
 app.use(cors(corsOpts));
 let users = {};
-io.on("connection", (socket) => {
+/* io.on("connection", (socket) => {
 	socket.on("clientsidejoined", (message) => {
 		users[message] = socket.id;
 		console.log(users);
@@ -44,7 +44,7 @@ io.on("connection", (socket) => {
 		io.to(users[message1.friendid]).emit(`${message1.friendid}`, message);
 	});
 	socket.on("disconnect", () => console.log("userdiconnected"));
-});
+}); */
 
 app.use(userRouter);
 app.use(router);
