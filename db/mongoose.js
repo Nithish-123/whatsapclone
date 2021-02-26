@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 /* import User from "./models/User"; */
 const connectionURL = process.env.MONGODB_URL;
 
-mongoose.connect(connectionURL, {
+mongoose.connect(process.env.MONGODB_URL, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 	useCreateIndex: true,
