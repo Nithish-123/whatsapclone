@@ -2,11 +2,11 @@
 import User from "../db/models/User";
 import auth from "../middleware/auth";
 import Message from "../db/models/Message"; */
-const router = new express.Router();
 
 const express = require("express");
 const auth = require("../middleware/auth");
 const Message = require("../db/models/Message");
+const router = new express.Router();
 
 router.post("/messages/", auth, async (req, res) => {
 	const message = new Message({
