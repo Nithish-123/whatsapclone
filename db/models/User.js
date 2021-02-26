@@ -1,8 +1,14 @@
-import mongoose from "mongoose";
+/* import mongoose from "mongoose";
 import validator from "validator";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import Message from "./Message";
+import Message from "./Message"; */
+
+const mongoose = require("mongoose");
+const validator = require("validator");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const Message = require("./Message");
 const userSchema = new mongoose.Schema({
 	username: {
 		type: String,
@@ -73,4 +79,5 @@ userSchema.pre("save", async function (next) {
 });
 
 const User = mongoose.model("User", userSchema);
-export default User;
+module.exports = User;
+/* export default User; */

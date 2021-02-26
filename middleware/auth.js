@@ -1,6 +1,9 @@
-import jwt from "jsonwebtoken";
+/* import jwt from "jsonwebtoken";
 import errorHandler from "./errorHandler";
-import User from "../db/models/User";
+import User from "../db/models/User"; */
+
+const jwt=require("jsonwebtoken")
+const User=require("../db/models/User")
 
 const auth = async (req, res, next) => {
 	try {
@@ -15,5 +18,5 @@ const auth = async (req, res, next) => {
 		res.status(401).send("unable to login:Please authenticate");
 	}
 };
-
-export default auth;
+module.exports=auth
+/* export default auth; */

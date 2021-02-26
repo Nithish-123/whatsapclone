@@ -1,12 +1,20 @@
-import express from "express";
-import "./db/mongoose";
-import userRouter from "./router/User";
-import { router, messagesave } from "./router/Message";
-import cors from "cors";
-import http from "http";
-import socketio from "socket.io";
+/* import express from "express"; */
+const express = require("express");
+/* import "./db/mongoose"; */
+require("./db/mongoose");
+/* import userRouter from "./router/User"; */
+const userRouter = require("./router/User");
+/* import { router, messagesave } from "./router/Message"; */
+const { router, messagesave } = require("./router/Message");
+/* import cors from "cors"; */
+const cors = require("cors");
+/* import http from "http"; */
+const http = require("http");
+/* import socketio from "socket.io"; */
+const socketio = require("socket.io");
 const Port = process.env.Port || 3001;
-const app = express();
+/* const app = express(); */
+const app = require("express");
 const server = http.createServer(app);
 const io = socketio(server, {
 	cors: {

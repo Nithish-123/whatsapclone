@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"start": "node index.js --exec babel-node",
+		"start": "node index.js ",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "env-cmd -f ./config/dev.env nodemon index.js --ext js --exec babel-node"
 	},

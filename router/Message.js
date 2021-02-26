@@ -1,8 +1,12 @@
-import express from "express";
+/* import express from "express";
 import User from "../db/models/User";
 import auth from "../middleware/auth";
-import Message from "../db/models/Message";
+import Message from "../db/models/Message"; */
 const router = new express.Router();
+
+const express = require("express");
+const auth = require("../middleware/auth");
+const Message = require("../db/models/Message");
 
 router.post("/messages/", auth, async (req, res) => {
 	const message = new Message({
@@ -45,5 +49,5 @@ router.delete("/messages/delete/:id", auth, async (req, res) => {
 	const message = await Message.findByIdAndDelete({ _id: req.params.id });
 	res.status(200).send(message);
 });
-
-export { router, messagesave };
+module.exports = { router, messagesave };
+/* export { router, messagesave }; */

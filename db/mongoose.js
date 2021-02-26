@@ -1,5 +1,6 @@
-import mongoose from "mongoose";
-import User from "./models/User";
+/* import mongoose from "mongoose"; */
+const mongoose = require("mongoose");
+/* import User from "./models/User"; */
 const connectionURL = process.env.MONGODB_URL;
 
 mongoose.connect(connectionURL, {

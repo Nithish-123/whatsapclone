@@ -1,7 +1,12 @@
-import express from "express";
+/* import express from "express";
 import User from "../db/models/User";
 import auth from "../middleware/auth";
-import errorHandler from "../middleware/errorHandler";
+import errorHandler from "../middleware/errorHandler"; */
+
+const express = require("express");
+const User = require("../db/models/User");
+const auth = require("../middleware/auth");
+const errorHandler = require("../middleware/errorHandler");
 
 const router = new express.Router();
 
@@ -93,5 +98,5 @@ router.delete("/user/delete", auth, async (req, res) => {
 	await user.remove();
 	res.status(500).send(user);
 });
-
-export default router;
+module.exports = router;
+/* export default router; */
