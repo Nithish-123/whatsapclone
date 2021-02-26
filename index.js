@@ -11,12 +11,15 @@ const server = http.createServer(app);
 const io = socketio(server, {
 	cors: {
 		origin: "https://nithish-chatapp.herokuapp.com",
-		methods:["GET","POST"]
+		methods: ["GET", "POST"],
 	},
 });
-
+const corsOpts = {
+	origin: "https://nithish-chatapp.herokuapp.com",
+	methods: ["GET", "POST", "PATCH", "DELETE"],
+};
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOpts));
 let users = {};
 io.on("connection", (socket) => {
 	socket.on("clientsidejoined", (message) => {
