@@ -12,7 +12,7 @@ const cors = require("cors");
 const http = require("http");
 /* import socketio from "socket.io"; */
 const socketio = require("socket.io");
-const Port = process.env.Port || 3000;
+
 const app = express();
 
 const server = http.createServer(app);
@@ -29,7 +29,7 @@ const corsOpts = {
 app.use(express.json());
 app.use(cors(corsOpts));
 let users = {};
-/* io.on("connection", (socket) => {
+io.on("connection", (socket) => {
 	socket.on("clientsidejoined", (message) => {
 		users[message] = socket.id;
 		console.log(users);
@@ -44,11 +44,11 @@ let users = {};
 		io.to(users[message1.friendid]).emit(`${message1.friendid}`, message);
 	});
 	socket.on("disconnect", () => console.log("userdiconnected"));
-}); */
+});
 
 app.use(userRouter);
 app.use(router);
-
+const Port = process.env.Port || 3003;
 server.listen(Port, () => {
 	console.log("server listening on", Port);
 });
