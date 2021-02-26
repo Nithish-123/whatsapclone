@@ -16,7 +16,7 @@ const io = socketio(server, {
 });
 const corsOpts = {
 	origin: "https://nithish-chatapp.herokuapp.com",
-	methods: ["GET", "POST", "PATCH", "DELETE"],
+	methods: ["GET", "POST"],
 };
 app.use(express.json());
 app.use(cors(corsOpts));
