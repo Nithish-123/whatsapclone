@@ -10,7 +10,8 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
 	cors: {
-		origin: "*",
+		origin: "https://nithish-chatapp.herokuapp.com",
+		methods:["GET","POST"]
 	},
 });
 
