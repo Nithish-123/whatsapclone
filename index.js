@@ -13,8 +13,8 @@ const http = require("http");
 /* import socketio from "socket.io"; */
 const socketio = require("socket.io");
 const Port = process.env.Port || 3001;
-/* const app = express(); */
-const app = require("express");
+const app = express();
+
 const server = http.createServer(app);
 const io = socketio(server, {
 	cors: {
